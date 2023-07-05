@@ -1,2 +1,3 @@
 #!/bin/bash
-ls -A1p | LC_COLLATE=C sort -d -k1.1,1.1 -k1.2n -k1.2,1.2 | awk '{printf("%s%s",sep,$0); sep=","} END{print ""}'
+ls -Ap | grep -E '^\.?\w' | sort -d -k1.1,1.1 -k1.2n -k1.2,1.2 | tr '\n' ',' | sed 's/,$/\n/'
+
