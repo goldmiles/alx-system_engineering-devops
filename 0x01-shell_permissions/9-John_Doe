@@ -1,2 +1,2 @@
 #!/bin/bash
-mode=$(stat -c "%a" hello)
+chmod u=rwx,go=rx,g+w hello
